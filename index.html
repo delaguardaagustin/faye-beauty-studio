@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faye Beauty Studio · Academia Fabiola Quezada en La Florida</title>
+<meta name="description" content="Color, mechas y peinados en La Florida. Y una academia para aprender el oficio. Agenda por WhatsApp.">
+<meta property="og:title" content="Faye Beauty Studio · La Florida">
+<meta property="og:image" content="assets/maps-2.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--acento:#6a4a6e;--suave:#f4eff4;--tinta:#1c1a19;--gris:#5d5853;--linea:#e4dfda;--fondo:#fbfaf8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fondo);color:var(--tinta);font:400 1.06rem/1.6 "Work Sans",system-ui,sans-serif;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1.05;margin:0}
+header{position:sticky;top:0;z-index:20;background:rgba(251,250,248,.94);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--linea)}
+.barra{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.marca{font-family:"Instrument Serif",Georgia,serif;font-size:1.35rem;text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:6px;background:var(--acento);color:#fff;text-decoration:none;font-weight:600;transition:filter .2s}
+.btn:hover{filter:brightness(1.12)}
+.btn svg{width:20px;height:20px;fill:currentColor}
+.portada{display:grid;grid-template-columns:1.05fr .95fr;min-height:min(calc(100svh - 64px),760px)}
+.portada figure{margin:0;position:relative}
+.portada figure img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.portada .texto{display:flex;flex-direction:column;justify-content:center;gap:22px;padding:56px clamp(20px,5vw,72px)}
+.portada h1{font-size:clamp(3rem,7vw,5.6rem);letter-spacing:-.02em;color:var(--acento)}
+.portada .sub{font-weight:600;letter-spacing:.04em;color:var(--gris);margin:0}
+.portada p.frase{font-size:1.2rem;max-width:30ch;margin:0}
+.dato{font-size:.95rem;color:var(--gris)}
+.dato a{color:var(--gris)}
+section{padding:84px 0}
+h2{font-size:clamp(2.1rem,4.5vw,3.2rem);margin-bottom:28px}
+.servicios ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--linea);counter-reset:s}
+.servicios li{display:grid;grid-template-columns:72px 1fr 1.2fr;gap:20px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--linea);counter-increment:s}
+.servicios li::before{content:counter(s,decimal-leading-zero);font-family:"Instrument Serif",Georgia,serif;font-size:1.3rem;color:var(--acento)}
+.servicios h3{font-size:1.7rem}
+.servicios p{margin:0;color:var(--gris)}
+.servicios .nota{margin-top:22px;color:var(--gris);font-size:.95rem}
+.foto2{margin:0 0 0 auto;max-width:520px;padding-top:40px}
+.foto2 img{border-radius:4px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.resenas{background:var(--suave)}
+.resenas blockquote{margin:0 0 34px;max-width:46ch}
+.resenas blockquote:nth-of-type(even){margin-left:auto}
+.resenas blockquote p{font-family:"Instrument Serif",Georgia,serif;font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.3;margin:0}
+.resenas cite{display:block;margin-top:10px;font-style:normal;color:var(--gris);font-size:.95rem}
+.enlace{font-weight:600}
+.visita .grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:12px 0;border-bottom:1px solid var(--linea);font-weight:400}
+td{text-align:right;color:var(--gris)}
+.visita ul{list-style:none;padding:0;margin:24px 0}
+.visita li{padding:4px 0}
+.mapa{aspect-ratio:4/3;border:0;width:100%;border-radius:4px;filter:grayscale(.35)}
+footer{padding:36px 0 110px;border-top:1px solid var(--linea);color:var(--gris);font-size:.95rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;min-height:52px;padding:0 20px;border-radius:999px;box-shadow:0 10px 26px -10px rgba(0,0,0,.45)}
+.aparece{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.aparece.si{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.aparece{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media (max-width:820px){
+  .portada{grid-template-columns:1fr;min-height:0}
+  .portada figure{height:62svh}
+  .portada .texto{padding:34px 20px 44px}
+  .servicios li{grid-template-columns:44px 1fr;}
+  .servicios li p{grid-column:2}
+  .visita .grid{grid-template-columns:1fr}
+  .foto2{margin:0 auto}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2Zm5.5 12.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.9-2.8-1.6-3.9-3.5-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-1 .9-1.2 2-1 3.2.4 2 1.6 3.6 3.4 5 2.4 2 4.2 2.4 5.7 2.4.7 0 1.6-.1 2.3-.6.6-.4 1.7-1.1 1.9-2.1.2-.9.2-1.7.1-1.8-.1-.2-.3-.2-.6-.4Z"/></symbol></svg>
+<header><div class="wrap barra">
+<a class="marca" href="#">Faye Beauty Studio</a>
+<a class="btn" href="https://wa.me/56984516372?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quiero%20agendar%20una%20hora" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Agendar</a>
+</div></header>
+<main>
+<section class="portada" style="padding:0">
+<figure><img src="assets/maps-2.jpg" alt="Faye Beauty Studio, academia fabiola quezada en La Florida"></figure>
+<div class="texto">
+<h1>Faye Beauty Studio</h1>
+<p class="sub">Academia Fabiola Quezada · La Florida</p>
+<p class="frase">Color, mechas y peinados en La Florida. Y una academia para aprender el oficio.</p>
+<p><a class="btn" href="https://wa.me/56984516372?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quiero%20agendar%20una%20hora" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Agendar por WhatsApp</a></p>
+<p class="dato">Av. Trinidad Oriente 929, La Florida · <a href="https://www.google.com/maps/search/?api=1&query=Faye%20Beauty%20Studio%20Av.%20Trinidad%20Oriente%20929%20La%20Florida" target="_blank" rel="noopener">Estudio y academia en La Florida</a></p>
+</div>
+</section>
+<section class="servicios" id="servicios"><div class="wrap">
+<h2 class="aparece">Servicios</h2>
+<ol class="aparece">
+<li><h3>Color y mechas</h3><p>Coloración y mechas trabajadas a mano, del tono que buscas.</p></li>
+<li><h3>Peinados y ondas</h3><p>Peinados para tu evento y ondas que duran.</p></li>
+<li><h3>Academia</h3><p>Cursos con Fabiola Quezada para quienes quieren aprender colorimetría.</p></li>
+</ol>
+<p class="nota">Los valores se confirman por WhatsApp según lo que necesites.</p>
+<figure class="foto2"><img src="assets/maps-3.jpg" alt="Trabajo de Faye Beauty Studio" loading="lazy"></figure>
+</div></section>
+
+<section class="visita" id="visita"><div class="wrap grid">
+<div class="aparece">
+<h2>Visítanos</h2>
+<table aria-label="Horario"><tr><th>Lunes a viernes</th><td>15:00 a 21:00</td></tr><tr><th>Sábado</th><td>10:00 a 20:30</td></tr><tr><th>Domingo</th><td>Cerrado</td></tr></table>
+<ul>
+<li>Av. Trinidad Oriente 929, La Florida</li>
+<li><a href="tel:+56984516372">+56 9 8451 6372</a></li>
+<li><a href="https://www.instagram.com/fayebeauty_studio/" target="_blank" rel="noopener">Instagram @fayebeauty_studio</a></li>
+</ul>
+<a class="btn" href="https://wa.me/56984516372?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quiero%20agendar%20una%20hora" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Agendar por WhatsApp</a>
+</div>
+<iframe class="mapa" src="https://www.google.com/maps?q=Av.%20Trinidad%20Oriente%20929%2C%20La%20Florida%2C%20Santiago&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación de Faye Beauty Studio"></iframe>
+</div></section>
+</main>
+<footer><div class="wrap"><span>Faye Beauty Studio · Av. Trinidad Oriente 929, La Florida</span><span>&copy; <span id="y"></span></span></div></footer>
+<a class="btn fab" href="https://wa.me/56984516372?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quiero%20agendar%20una%20hora" target="_blank" rel="noopener" aria-label="Agendar por WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg>Agendar por WhatsApp</a>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var els=document.querySelectorAll('.aparece');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('si')});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('si');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(e){io.observe(e)})})();
+</script>
+<link rel="stylesheet" href="asistente.css">
+<script>window.ASISTENTE={"negocio": "Faye Beauty Studio", "persona": "Faye Beauty Studio", "wa": "56984516372", "boton": "Cuéntame qué buscas", "saludo": "Hola, soy el asistente de Faye Beauty Studio. ¿Qué estás buscando?", "servicios": [{"n": "Color y mechas", "info": "Coloración y mechas trabajadas a mano, del tono que buscas.", "opts": [], "kw": "color|mecha|balayage|tinte|rubio|decolora"}, {"n": "Peinados y ondas", "info": "Peinados para tu evento y ondas que duran.", "opts": [], "kw": "peinado|onda|evento|permanente|rizo"}, {"n": "Academia", "info": "Cursos con Fabiola Quezada para quienes quieren aprender colorimetría.", "opts": [], "kw": "curso|academia|aprender|clase|capacita"}], "faq": [{"pri": true, "kw": "precio|valor|cuanto|costo|cobra|tarifa", "r": "Los valores dependen del servicio. Faye Beauty Studio te los confirma por WhatsApp."}, {"kw": "donde|direccion|ubicacion|llegar|la", "r": "Está en Av. Trinidad Oriente 929, La Florida."}, {"kw": "horario|abre|cierra|disponib|dias|que hora|domingo|sabado", "r": "Atienden lunes a viernes de 15:00 a 21:00 y sábado de 10:00 a 20:30."}, {"kw": "agendar|reservar|una hora|pedir hora|\\bcita\\b", "r": "Se agenda por WhatsApp. Si eliges lo que buscas aquí, le dejo el mensaje listo a Faye Beauty Studio."}]};</script>
+<script src="asistente.js" defer></script>
+</body>
+</html>
