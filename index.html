@@ -127,5 +127,10 @@ document.getElementById('y').textContent=new Date().getFullYear();
 <link rel="stylesheet" href="asistente.css">
 <script>window.ASISTENTE={"negocio": "Faye Beauty Studio", "persona": "Faye Beauty Studio", "wa": "56984516372", "boton": "Cuéntame qué buscas", "saludo": "Hola, soy el asistente de Faye Beauty Studio. ¿Qué estás buscando?", "servicios": [{"n": "Color y mechas", "info": "Coloración y mechas trabajadas a mano, del tono que buscas.", "opts": [], "kw": "color|mecha|balayage|tinte|rubio|decolora"}, {"n": "Peinados y ondas", "info": "Peinados para tu evento y ondas que duran.", "opts": [], "kw": "peinado|onda|evento|permanente|rizo"}, {"n": "Academia", "info": "Cursos con Fabiola Quezada para quienes quieren aprender colorimetría.", "opts": [], "kw": "curso|academia|aprender|clase|capacita"}], "faq": [{"pri": true, "kw": "precio|valor|cuanto|costo|cobra|tarifa", "r": "Los valores dependen del servicio. Faye Beauty Studio te los confirma por WhatsApp."}, {"kw": "donde|direccion|ubicacion|llegar|la", "r": "Está en Av. Trinidad Oriente 929, La Florida."}, {"kw": "horario|abre|cierra|disponib|dias|que hora|domingo|sabado", "r": "Atienden lunes a viernes de 15:00 a 21:00 y sábado de 10:00 a 20:30."}, {"kw": "agendar|reservar|una hora|pedir hora|\\bcita\\b", "r": "Se agenda por WhatsApp. Si eliges lo que buscas aquí, le dejo el mensaje listo a Faye Beauty Studio."}]};</script>
 <script src="asistente.js" defer></script>
+<!-- contador de visitas -->
+<script>(function(){try{var L=localStorage,S=sessionStorage;if(location.search.indexOf('yo=1')>-1)L.setItem('soy-de-la-casa','1');
+if(L.getItem('soy-de-la-casa')||S.getItem('visita-contada'))return;S.setItem('visita-contada','1');
+var s=location.pathname.split('/').filter(Boolean)[0]||'',c=JSON.stringify({s:s});if(!s)return;
+if(navigator.sendBeacon)navigator.sendBeacon('https://n8n-production-003b9.up.railway.app/webhook/visita',c);else fetch('https://n8n-production-003b9.up.railway.app/webhook/visita',{method:'POST',body:c,keepalive:true});}catch(e){}})();</script>
 </body>
 </html>
